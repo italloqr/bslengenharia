@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import TopBar from './components/TopBar.vue';
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <TopBar />
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
