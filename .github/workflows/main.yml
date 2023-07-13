@@ -11,10 +11,10 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js 16
-      uses: actions/setup-node@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '20'
 
     - name: Build Project
       run: |
@@ -24,7 +24,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.itallo.dev
-        username: itallorodrigues@bslengenharia.com.br
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ secrets.FTP_DIRECTORY }}
